@@ -28,11 +28,11 @@ export class TabMedicamentoService {
   }
 
   async findAll(): Promise<TabMedicamento[]> {
-    return this.tabMedicamentoRepository.find({ relations: ['composicoes'] });
+    return this.tabMedicamentoRepository.find({ relations: ['composicoes', 'manipuladoras'] });
   }
 
   async findOne(id: number): Promise<TabMedicamento> {
-    const medicamento = await this.tabMedicamentoRepository.findOne({ where: { id }, relations: ['composicoes'] });
+    const medicamento = await this.tabMedicamentoRepository.findOne({ where: { id }, relations: ['composicoes', 'manipuladoras'] });
     if (!medicamento) {
       throw new NotFoundException(`Medicamento with ID ${id} not found`);
     }
