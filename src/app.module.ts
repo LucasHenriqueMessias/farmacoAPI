@@ -9,6 +9,7 @@ import { TabControladoModule } from './tab_controlado/tab_controlado.module';
 import { TabManipuladorasModule } from './tab_manipuladoras/tab_manipuladoras.module';
 import { TabMedicamento } from './tab_medicamento/entities/tab_medicamento.entity';
 import { TabManipuladoras } from './tab_manipuladoras/entities/tab_manipuladora.entity';
+import { TabComposicao } from './tab_composicao/entities/tab_composicao.entity';
 
 @Module({
   imports: [
@@ -22,7 +23,7 @@ import { TabManipuladoras } from './tab_manipuladoras/entities/tab_manipuladora.
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_DATABASE,
-      entities: [TabMedicamento, TabManipuladoras],
+      entities: [TabMedicamento, TabManipuladoras, TabComposicao],
       synchronize: true,
     }),
     TabMedicamentoModule,

@@ -1,4 +1,4 @@
-import { IsString, IsDateString, IsNumber } from 'class-validator';
+import { IsString, IsDateString, IsNumber, IsArray, IsOptional } from 'class-validator';
 
 export class CreateTabMedicamentoDto {
   @IsString()
@@ -27,4 +27,8 @@ export class CreateTabMedicamentoDto {
 
   @IsString()
   tipo: string;
+
+  @IsArray()
+  @IsOptional()
+  composicoes?: number[];
 }

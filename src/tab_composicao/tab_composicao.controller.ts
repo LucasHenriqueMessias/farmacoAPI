@@ -18,17 +18,17 @@ export class TabComposicaoController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
+  findOne(@Param('id') id: number) {
     return this.tabComposicaoService.findOne(+id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateTabComposicaoDto: UpdateTabComposicaoDto) {
+  update(@Param('id') id: number, @Body() updateTabComposicaoDto: UpdateTabComposicaoDto) {
     return this.tabComposicaoService.update(+id, updateTabComposicaoDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
+  remove(@Param('id') id: number) {
     return this.tabComposicaoService.remove(+id);
   }
 }
